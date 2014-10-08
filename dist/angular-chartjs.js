@@ -86,7 +86,10 @@
           );
       
           chart = chart[chartType](scope.dataset, chartOpts);
-          element.data('chart', chart);
+          element.data('chartContext', {
+              chart: chart,
+              dataset: scope.dataset
+          });
 
           scope.$watch('dataset', function (newData, oldData) {
             chart.initialize(newData);

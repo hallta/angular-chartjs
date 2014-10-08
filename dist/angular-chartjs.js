@@ -1,4 +1,3 @@
-// test
 (function () {
   'use strict';
   
@@ -87,6 +86,7 @@
           );
       
           chart = chart[chartType](scope.dataset, chartOpts);
+          element.data('chart', chart);
 
           scope.$watch('dataset', function (newData, oldData) {
             chart.initialize(newData);
